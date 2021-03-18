@@ -2973,7 +2973,6 @@ movies.forEach(movie => {
     mainMoviesArray.push(movie.title);
 });
 
-
 /* FUNCTIONS */
 init();
 
@@ -2991,8 +2990,6 @@ function createShortMovieArr() {
 
     return shortMovieArr;
 }
-
-console.log(createShortMovieArr());
 
 //function to create a base URL for a given movie
 function createBaseUrls(movieName) {
@@ -3030,13 +3027,12 @@ function getData() {
 
 //render everything
 function render() {
-    console.log("Main array");
-    console.log(finalDataArray);
-    console.log(finalDataArray[5]);
+    finalDataArray = finalDataArray.slice(0,5);
+
 }
 
 
 /* 
 Considerations:
-- What do to when the API returns movie not found. 
+- What do to when the API returns movie not found. --> FIXED..in getData() function, added a condition to check for Error. 
 */
