@@ -3014,18 +3014,25 @@ function getData() {
             .then(function (movieData) {
                     if (movieData.hasOwnProperty('Error')) return;
                     finalDataArray.push(movieData);
-                    render();
                 },
                 function error(movieData) {
                     console.log(movieData);
                 })
     }
 
+    // Need to run the render() inside setTimeout in order to give enough time for the promise to return all the data and 
+    // store it in the finallDataArray before doing anything with it. 
+    setTimeout(() => {
+        render();
+    }, 1000);
+
 }
 
 //render everything
 function render() {
+    console.log("Main array");
     console.log(finalDataArray);
+    console.log(finalDataArray[5]);
 }
 
 
