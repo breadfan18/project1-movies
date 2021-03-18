@@ -2967,10 +2967,10 @@ const movies = [{
         "rate": 8
     }
 ]
-let moviesArray = [];
+let mainMoviesArray = [];
 let finalDataArray = [];
 movies.forEach(movie => {
-    moviesArray.push(movie.title);
+    mainMoviesArray.push(movie.title);
 });
 
 
@@ -2981,19 +2981,12 @@ function init() {
     getData();
 }
 
-// function that retruns a single random movie from the movie list 
-// created this function so that in the case that an api returns 'not found' for a movie, we can run this 
-// function to quickly find another one
-function selectRandomMovie() {
-    let currentNum = Math.floor(Math.random() * (moviesArray.length - 1) + 1);
-    return moviesArray[currentNum];
-}
-
 //function that returns an array of 5 random movies. 
 function createShortMovieArr() {
     let shortMovieArr = [];
     for (let i = 0; i < 20; i++) {
-        shortMovieArr.push(selectRandomMovie());
+        let randomNum = Math.floor(Math.random() * (mainMoviesArray.length - 1) + 1);
+        shortMovieArr.push(mainMoviesArray[randomNum]);
     }
 
     return shortMovieArr;
@@ -3032,7 +3025,7 @@ function getData() {
 
 //render everything
 function render() {
-    console.log(finalDataArray.slice(0, 5));
+    console.log(finalDataArray);
 }
 
 
