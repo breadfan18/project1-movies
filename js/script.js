@@ -3032,7 +3032,6 @@ function getData() {
 function render() {
     finalDataArray = finalDataArray.slice(0,5);
     console.log(finalDataArray);
-    
 
     const html = finalDataArray.map(function (movie) {
         return `

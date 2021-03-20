@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,12 +19,26 @@ main {
 header, footer {
     display: flex;
     align-items: center;
-    height: 3rem;  /* maybe 50px */
+
+}
+
+header {
+    padding: 50px;
+    background-color: black;
+    color: white;
+    font-family: 'Ranchers', cursive;
+    height: 5rem;
+    font-size: 50px;
+}
+
+#popcorn {
+    height: 8rem;
 }
 
 footer {
     justify-content: center;
     background-color: rgba(0,0,0, 0.2);
+    height: 2rem;  /* maybe 50px */
 }
 
 #movies {
