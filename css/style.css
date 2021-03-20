@@ -19,44 +19,53 @@ main {
     /* border-right: 20px dashed rgb(92, 91, 91); */
 }
 
-header, footer {
+.iframeOff {
+    display: none;
+}
+
+header,
+footer {
     display: flex;
     align-items: center;
 }
 
 header {
     padding: 10px 10px -30px 50px;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     font-family: 'Ranchers', cursive;
     /* height: 5rem; */
     font-size: 4vw;
 }
 
-h1, #popcorn, #reel {
-    margin-bottom: -30px;
+h1,
+#popcorn,
+#reel {
     padding-right: 2px;
     z-index: 1;
 }
 
-#popcorn, #reel {
+#popcorn,
+#reel {
     height: 10vw;
+}
+
+header p {
+    font-size: 2vw;
+    margin-top: -10px;
 }
 
 .action {
     margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-right: 20px solid black;
-
     border-radius: 10px;
+    height: 8vw;
+
 }
 
 .static {
-    position: relative;
+    position: absolute;
     height: 8vw;
-    background: white;
     border: 5px solid black;
     border-radius: 10px;
     cursor: pointer;
@@ -67,17 +76,26 @@ h1, #popcorn, #reel {
     border: 5px solid black;
     border-radius: 10px;
     cursor: pointer;
-    
 }
 
-.static:hover{
-    opacity:0;
+.active:hover{
+    position: absolute;
+    border: 10px solid black;
+    border-radius: 50%;
+    transition: ease-in-out 0.5s;
+}
+
+.static:hover {
+    display: none;
+    border-radius: 50%;
+
 }
 
 footer {
     justify-content: center;
-    background-color: rgba(0,0,0, 0.2);
-    height: 2rem;  /* maybe 50px */
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 2rem;
+    /* maybe 50px */
 }
 
 #movies {
@@ -93,7 +111,7 @@ footer {
     flex-wrap: wrap;
     margin: 20px;
     margin-top: 60px;
-    background-color:white;
+    background-color: white;
     cursor: pointer;
     box-shadow: 10px 5px 5px rgb(95, 91, 91);
     max-width: 19.3rem;
@@ -104,13 +122,14 @@ footer {
 }
 
 .card:hover {
-    background-color:rgb(211, 205, 205);
-    transform: scale(1.04);
-    transition: all 0.4s;
+    background-color: rgb(211, 205, 205);
+    transform: scale(1.05);
+    transition: ease-in-out 0.5s;
     box-shadow: 10px 5px 5px #fff;
+    color: black;
 }
 
-.poster , .card > p {
+.poster, .card>p {
     margin: 10px;
 }
 
@@ -126,8 +145,11 @@ footer {
 }
 
 @media (min-width: 900px) {
-    h1, #popcorn, #reel {
+
+    h1,
+    #popcorn,
+    #reel {
         margin-bottom: -10px;
     }
- 
+
 }

@@ -2975,14 +2975,41 @@ movies.forEach(movie => {
 
 // ELEMENTS
 const $movieSection = $('#movies');
-// const $generateButton = $('.');
+const $actionButton = $('.action');
+const IFRAME = `<div class="iframe" style='position:relative; margin-top:20px; padding-bottom:calc(57.50% +  44px)'>
+                    <iframe src='https://gfycat.com/ifr/CalmGiftedErmine' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
+                    </iframe>
+                </div>`;
+
 
 /* FUNCTIONS */
 
-init();
-
 function init() {
-    getData();
+    //clear all children from the movieSection
+    $movieSection.empty();
+
+    //Empty the final movier array
+    finalDataArray = [];
+
+    //getting rid of previously generated iframes
+    let $allIframes = $('.iframe');
+    for (const iframe of $allIframes) {
+        iframe.remove();
+    }
+
+    //Add new iframe for the countdown
+    $('main').append(IFRAME);
+
+    //Set timeout to 5s for countfown, then fadeOut iframe and run getData to populate movies. 
+    setTimeout(() => {
+        $('iframe').fadeOut(700, function () {
+            $('iframe').remove();
+        });
+        getData();
+    }, 4500);
+
+ 
+
 }
 
 //function that returns an array of 5 random movies. 
@@ -3032,7 +3059,7 @@ function getData() {
 
 //render everything
 function render() {
-    finalDataArray = finalDataArray.slice(0,5);
+    finalDataArray = finalDataArray.slice(0, 5);
     console.log(finalDataArray);
 
     const html = finalDataArray.map(function (movie) {
@@ -3048,8 +3075,11 @@ function render() {
 
 }
 
+
 // Event Listeners 
-// $generateButton.on('click', init);
+$actionButton.on('click', init);
+
+
 /* 
 Considerations:
 - What do to when the API returns movie not found. --> FIXED..in getData() function, added a condition to check for Error. 
