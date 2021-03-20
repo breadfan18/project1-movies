@@ -3037,7 +3037,7 @@ function render() {
         return `
         <article class="card">
             <img class="poster" src="${movie.Poster}" alt="Poster">
-            <p>${movie.Title}</p>
+            <p class="mainTitle">${movie.Title}</p>
             <p>${movie.Year}</p>
         </article>    
         `;

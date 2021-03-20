@@ -14,8 +14,7 @@ body {
 
 main {
     flex-grow: 1; /* this will push the header up and the footer down, so sticky footer!! */
-    /* background-image: linear-gradient(to right, #000, #fff); */
-    /* z-index: -1; makes the main gradient go back to the screen */
+    background-image: linear-gradient(to right, #000, #fff);
 }
 
 header, footer {
@@ -59,11 +58,14 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: space-between;
+    flex-wrap: wrap;
     margin: 20px;
     margin-top: 60px;
     background-color:white;
     cursor: pointer;
     box-shadow: 10px 5px 5px rgb(95, 91, 91);
+    max-width: 19.3rem;
+    /* font-family: 'Roboto', sans-serif; */
 }
 
 .card:hover {
@@ -80,6 +82,11 @@ footer {
     color: red;
     height: 23rem;
     width: 18rem;
+}
+
+.mainTitle {
+    font-size: 1.5rem;
+    /* font-weight: bold; */
 }
 
 @media (min-width: 900px) {
