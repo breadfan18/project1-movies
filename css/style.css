@@ -14,25 +14,32 @@ body {
 
 main {
     flex-grow: 1; /* this will push the header up and the footer down, so sticky footer!! */
+    /* background-image: linear-gradient(to right, #000, #fff); */
+    /* z-index: -1; makes the main gradient go back to the screen */
 }
 
 header, footer {
     display: flex;
     align-items: center;
-
 }
 
 header {
-    padding: 50px;
+    padding: 10px 10px -30px 10px;
     background-color: black;
     color: white;
     font-family: 'Ranchers', cursive;
-    height: 5rem;
-    font-size: 50px;
+    /* height: 5rem; */
+    font-size: 4vw;
 }
 
-#popcorn {
-    height: 8rem;
+h1, #popcorn, #reel {
+    margin-bottom: -30px;
+    padding-right: 2px;
+    z-index: 1;
+}
+
+#popcorn, #reel {
+    height: 10vw;
 }
 
 footer {
@@ -52,15 +59,17 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    /* border: 5px solid black;
-    border-radius: 10px; */
-    margin: 30px;
-    background-color:antiquewhite;
+    margin: 20px;
+    margin-top: 60px;
+    background-color:white;
     cursor: pointer;
+    box-shadow: 10px 5px 5px rgb(95, 91, 91);
 }
 
 .card:hover {
-    background-color:darkgrey;
+    background-color:rgb(211, 205, 205);
+    transform: scale(1.04);
+    transition: all 0.4s;
 }
 
 .poster , .card > p {
@@ -69,6 +78,13 @@ footer {
 
 .poster {
     color: red;
-    height: 20rem;
-    width: 13rem;
+    height: 23rem;
+    width: 18rem;
 }
+
+@media (min-width: 900px) {
+    h1, #popcorn, #reel {
+        margin-bottom: -10px;
+    }
+}
+

@@ -1,5 +1,5 @@
 Presetation Topics: 
 - Getting the movie file and then looping over it to get the key and storing in the array
 - Process to create the finalArray of 5 movies that display on the screen
-- Challenge to get data from multiple endpoints and store it in the array - setTimeout to the rescue
-- 
+- Challenge --> to get data from multiple endpoints and store it in the array - setTimeout to the rescue
+- Challenge --> api returned "Not found" for some movies, so needed to get find a way to get past that
