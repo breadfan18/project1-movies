@@ -1,4 +1,4 @@
-// Variables
+// VARIABLES
 const movies = [{
         "title": "The Shawshank Redemption",
         "year": 1994,
@@ -2973,6 +2973,9 @@ movies.forEach(movie => {
     mainMoviesArray.push(movie.title);
 });
 
+// ELEMENTS
+let $movieSection = $('#movies');
+
 /* FUNCTIONS */
 init();
 
@@ -3028,6 +3031,19 @@ function getData() {
 //render everything
 function render() {
     finalDataArray = finalDataArray.slice(0,5);
+    console.log(finalDataArray);
+    
+
+    const html = finalDataArray.map(function (movie) {
+        return `
+        <article class="card">
+            <img class="poster" src="${movie.Poster}" alt="Poster">
+            <p>${movie.Title}</p>
+            <p>${movie.Year}</p>
+        </article>    
+        `;
+    });
+    $movieSection.append(html);
 
 }
 
