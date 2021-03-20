@@ -14,7 +14,9 @@ body {
 
 main {
     flex-grow: 1; /* this will push the header up and the footer down, so sticky footer!! */
-    background-image: linear-gradient(to right, #000, #fff);
+    background-image: linear-gradient(to right, #000, rgb(141, 132, 132), #000);
+    /* border: 20px dashed rgb(63, 62, 62); */
+    /* border-right: 20px dashed rgb(92, 91, 91); */
 }
 
 header, footer {
@@ -24,7 +26,7 @@ header, footer {
 
 header {
     padding: 10px 10px -30px 50px;
-    background-color: black;
+    background-color: rgba(0,0,0,1);
     color: white;
     font-family: 'Ranchers', cursive;
     /* height: 5rem; */
@@ -41,8 +43,35 @@ h1, #popcorn, #reel {
     height: 10vw;
 }
 
-#generate {
+.action {
     margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 20px solid black;
+
+    border-radius: 10px;
+}
+
+.static {
+    position: relative;
+    height: 8vw;
+    background: white;
+    border: 5px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.active {
+    height: 8vw;
+    border: 5px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.static:hover{
+    opacity:0;
 }
 
 footer {
@@ -55,7 +84,6 @@ footer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-   
 }
 
 .card {
@@ -79,6 +107,7 @@ footer {
     background-color:rgb(211, 205, 205);
     transform: scale(1.04);
     transition: all 0.4s;
+    box-shadow: 10px 5px 5px #fff;
 }
 
 .poster , .card > p {
@@ -100,5 +129,5 @@ footer {
     h1, #popcorn, #reel {
         margin-bottom: -10px;
     }
+ 
 }
-
