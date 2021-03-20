@@ -2974,10 +2974,10 @@ movies.forEach(movie => {
 });
 
 // ELEMENTS
-let $movieSection = $('#movies');
+const $movieSection = $('#movies');
+const $generateButton = $('#generate');
 
 /* FUNCTIONS */
-init();
 
 function init() {
     getData();
@@ -3046,7 +3046,8 @@ function render() {
 
 }
 
-
+// Event Listeners 
+$generateButton.on('click', init);
 /* 
 Considerations:
 - What do to when the API returns movie not found. --> FIXED..in getData() function, added a condition to check for Error. 
