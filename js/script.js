@@ -2981,6 +2981,7 @@ const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padd
                     </iframe>
                 </div>`;
 const $overlay = $('.overlay');
+const $moviesSection = $('#movies');
 
 /* FUNCTIONS */
 
@@ -3075,10 +3076,51 @@ function removeOverlay() {
     $(this).css('display', 'none');
 }
 
+function renderOverlay(e) {
+    $overlay.empty();
+    let $elementClicked = $(e.target);
+    let $closest = $elementClicked.next();
+    let movieName = $closest.text();
+    let movieClicked = {};
+
+    finalDataArray.forEach(movie => {
+        if (movie.Title === movieName) {
+            movieClicked = movie;
+        }
+    });
+
+    let movieCardHtml = `
+        <div class="movieDisplay">
+            <div class="movieText">
+                <h2 id="title">${movieClicked.Title}</h2>
+                <p id="yearDir">${movieClicked.Year}, ${movieClicked.Director}</p>
+                <p id="runtimeGenre"><span id="runtime">${movieClicked.Runtime}</span>${movieClicked.Genre}</p>
+                <p id="plot">${movieClicked.Plot}</p>
+                <p id="language">${movieClicked.Language}</p>
+                <p id="country">${movieClicked.Country}</p>
+            </div>
+            <img id="mainImg" src="${movieClicked.Poster}" alt="mainImage">
+        </div>
+    `
+    $overlay.css('display', 'flex');
+    $($overlay).append(movieCardHtml);
+    // $('.movieDisplay').addClass('movieDisplaySwipeIn');
+
+}
+
+
 // Event Listeners 
 $actionButton.on('click', init);
-$overlay.on('click', removeOverlay)
+$overlay.on('click', removeOverlay);
+$movieSection.on('click', '.card', renderOverlay);
+
 /* 
 Considerations:
 - What do to when the API returns movie not found. --> FIXED..in getData() function, added a condition to check for Error. 
+*/
+
+/* 
+TO FIX
+- Clicking Year of Movie Name in card will result in error, because i don't have any conditional logic to map those to the movie object
+- Add Actor/Actress in 
 */
