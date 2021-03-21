@@ -1,32 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .movieDisplay {
     margin: 0 auto;
     max-width: 80vw;
     display: grid;
     border: 4px solid red;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 100px auto;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    /* grid-auto-rows: 100px auto; */
     grid-template-areas: 
-     "title title poster"
-     "blah test poster"
-     "blah test poster"
-     "blah test poster"
-     "blah test poster"
-     "blah test poster"
-     "blah test poster"
-     "blah test poster"
-     "blah test poster"
-     ;
+     "movieDetails test poster";
 }
 
-.movieDisplay *{
+/* .movieDisplay *{
     border: 2px dotted red;
+} */
+
+.movieText {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+    font-size: 1.3vw;
 }
 
 #title {
-    grid-area: title;
+    font-size: 3vw;
+}
+
+#yearDir {
+    color:turquoise;
+}
+
+#plot{
+    line-height: 25px;
 }
 
 img {
     grid-area: poster;
     justify-self: end;
+    align-self: center;
+    height: 60vh;
+    width: 30vw;
+    border: solid 1.5em rgba(#000, 0.9)
+}
+
+#runtime {
+    border: 2px solid rgb(78, 78, 80);
+    padding: 3px;
+    border-radius: 7px;
+    color:teal;
+    margin-right: 10px;
 }
