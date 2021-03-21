@@ -154,14 +154,12 @@ footer {
     /* font-weight: bold; */
 }
 
-.hidden {
+div.test {
     display: none;
 }
 
 
-/*  */
-
-.popup {
+div.overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -204,13 +202,10 @@ footer {
 }
 
 #plot{
-    /* line-height: 35px; */
+    line-height: 35px;
 }
 
 #mainImg {
-    grid-area: poster;
-    justify-self: end;
-    align-self: center;
     height: 60vh;
     width: 30vw;
     border: solid 1.5em rgba(#000, 0.9)

@@ -2980,7 +2980,7 @@ const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padd
                     <iframe src='https://gfycat.com/ifr/CalmGiftedErmine' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
                     </iframe>
                 </div>`;
-
+const $overlay = $('.overlay');
 
 /* FUNCTIONS */
 
@@ -3071,11 +3071,13 @@ function render() {
 
 }
 
+function removeOverlay() {
+    $(this).css('display', 'none');
+}
 
 // Event Listeners 
 $actionButton.on('click', init);
-
-
+$overlay.on('click', removeOverlay)
 /* 
 Considerations:
 - What do to when the API returns movie not found. --> FIXED..in getData() function, added a condition to check for Error. 
