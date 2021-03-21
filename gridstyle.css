@@ -1,0 +1,32 @@
+.movieDisplay {
+    margin: 0 auto;
+    max-width: 80vw;
+    display: grid;
+    border: 4px solid red;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 100px auto;
+    grid-template-areas: 
+     "title title poster"
+     "blah test poster"
+     "blah test poster"
+     "blah test poster"
+     "blah test poster"
+     "blah test poster"
+     "blah test poster"
+     "blah test poster"
+     "blah test poster"
+     ;
+}
+
+.movieDisplay *{
+    border: 2px dotted red;
+}
+
+#title {
+    grid-area: title;
+}
+
+img {
+    grid-area: poster;
+    justify-self: end;
+}
