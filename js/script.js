@@ -2976,8 +2976,8 @@ movies.forEach(movie => {
 // ELEMENTS
 const $movieSection = $('#movies');
 const $actionButton = $('.action');
-const IFRAME = `<div class="iframe" style='position:relative; margin-top:20px; padding-bottom:calc(57.50% +  44px)'>
-                    <iframe src='https://gfycat.com/ifr/CalmGiftedErmine' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
+const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padding-bottom:calc(57.50% +  44px)'>
+                    <iframe src='https://gfycat.com/ifr/CalmGiftedErmine' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
                     </iframe>
                 </div>`;
 
@@ -3007,9 +3007,6 @@ function init() {
         });
         getData();
     }, 4500);
-
- 
-
 }
 
 //function that returns an array of 5 random movies. 
@@ -3048,7 +3045,6 @@ function getData() {
                     console.log(movieData);
                 })
     }
-
     // Need to run the render() inside setTimeout in order to give enough time for the promise to return all the data and 
     // store it in the finallDataArray before doing anything with it. 
     setTimeout(() => {

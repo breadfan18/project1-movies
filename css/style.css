@@ -29,6 +29,10 @@ footer {
     align-items: center;
 }
 
+footer {
+    z-index: 1;
+}
+
 header {
     padding: 10px 10px -30px 50px;
     background-color: rgba(0, 0, 0, 1);
@@ -48,6 +52,11 @@ h1,
 #popcorn,
 #reel {
     height: 10vw;
+}
+
+#reel {
+    transform: rotateZ(80deg);
+    margin-top: 25px;
 }
 
 header p {
@@ -125,7 +134,7 @@ footer {
     background-color: rgb(211, 205, 205);
     transform: scale(1.05);
     transition: ease-in-out 0.5s;
-    box-shadow: 10px 5px 5px #fff;
+    box-shadow: 10px 5px 5px rgb(255, 255, 255);
     color: black;
 }
 
@@ -144,8 +153,30 @@ footer {
     /* font-weight: bold; */
 }
 
-@media (min-width: 900px) {
+.popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 30px;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease-in-out 1s;
+}
 
+.movieDisplay {
+    display: grid;
+    padding-top: 35vh;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 900px) {
     h1,
     #popcorn,
     #reel {
