@@ -177,12 +177,6 @@ footer {
     border: 1px solid gray;
     border-radius: 30px;
     box-shadow: 0 0 30px turquoise;
-
-}
-
-.movieDisplaySwipeIn {
-    margin-left: 0;
-    transition: 1s ease;
 }
 
 .movieText {

@@ -2981,7 +2981,6 @@ const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padd
                     </iframe>
                 </div>`;
 const $overlay = $('.overlay');
-const $moviesSection = $('#movies');
 
 /* FUNCTIONS */
 
@@ -3125,6 +3124,7 @@ $movieSection.on('click', '.card', renderOverlay);
 /* 
 Considerations:
 - What do to when the API returns movie not found. --> FIXED..in getData() function, added a condition to check for Error. 
+- Random hex generator - for the movieDisplay glow every time its displayed. 
 */
 
 /* 
