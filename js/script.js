@@ -2985,31 +2985,6 @@ const $moviesSection = $('#movies');
 
 /* FUNCTIONS */
 
-function init() {
-    //clear all children from the movieSection
-    $movieSection.empty();
-
-    //Empty the final movier array
-    finalDataArray = [];
-
-    //getting rid of previously generated iframes
-    let $allIframes = $('.iframe');
-    for (const iframe of $allIframes) {
-        iframe.remove();
-    }
-
-    //Add new iframe for the countdown
-    $('main').append(IFRAME);
-
-    //Set timeout to 5s for countfown, then fadeOut iframe and run getData to populate movies. 
-    setTimeout(() => {
-        $('iframe').fadeOut(700, function () {
-            $('iframe').remove();
-        });
-        getData();
-    }, 4500);
-}
-
 //function that returns an array of 5 random movies. 
 function createShortMovieArr() {
     let shortMovieArr = [];
@@ -3034,6 +3009,32 @@ function createUrlArray(movieArray) {
     return urlArr;
 }
 
+// Function called by click event on the action button that kicks off the process to render movie list on screen. 
+function init() {
+    //clear all children from the movieSection
+    $movieSection.empty();
+
+    //Empty the final movier array
+    finalDataArray = [];
+
+    //getting rid of previously generated iframes
+    let $allIframes = $('.iframe');
+    for (const iframe of $allIframes) {
+        iframe.remove();
+    }
+
+    //Add new iframe for the countdown
+    $('main').append(IFRAME);
+
+    //Set timeout to 5s for countfown, then fadeOut iframe and run getData to populate movies. 
+    setTimeout(() => {
+        $('iframe').fadeOut(1000, function () {
+            $('iframe').remove();
+        });
+        getData();
+    }, 4500);
+}
+
 // function to get data from each of the URLs
 function getData() {
     for (const url of createUrlArray(createShortMovieArr())) {
@@ -3054,7 +3055,7 @@ function getData() {
 
 }
 
-//render everything
+//render the top 5 movie list on the page
 function render() {
     finalDataArray = finalDataArray.slice(0, 5);
     console.log(finalDataArray);
@@ -3069,15 +3070,17 @@ function render() {
         `;
     });
     $movieSection.append(html);
-
 }
 
+//function called by click action on the overlay, so set display of overlay to none, and go back to the main page.
 function removeOverlay() {
     $(this).fadeOut(1000, function () {
         $(this).css('display', 'none');
     })
 }
 
+
+//function to render all movie specific contents
 function renderOverlay(e) {
     $overlay.empty();
     let $elementClicked = $(e.target);
