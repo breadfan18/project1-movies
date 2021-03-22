@@ -3073,7 +3073,9 @@ function render() {
 }
 
 function removeOverlay() {
-    $(this).css('display', 'none');
+    $(this).fadeOut(1000, function () {
+        $(this).css('display', 'none');
+    })
 }
 
 function renderOverlay(e) {
@@ -3102,7 +3104,10 @@ function renderOverlay(e) {
             <img id="mainImg" src="${movieClicked.Poster}" alt="mainImage">
         </div>
     `
-    $overlay.css('display', 'flex');
+    $overlay.fadeIn(1000, function () {
+        $overlay.css('display', 'flex');
+    }
+        )
     $($overlay).append(movieCardHtml);
     // $('.movieDisplay').addClass('movieDisplaySwipeIn');
 
@@ -3122,5 +3127,6 @@ Considerations:
 /* 
 TO FIX
 - Clicking Year of Movie Name in card will result in error, because i don't have any conditional logic to map those to the movie object
-- Add Actor/Actress in 
+- one IFRAME element still exists for some reason and is taking up space, pushing the footer down.
+- Disabled action button, during countdown.
 */
