@@ -3057,7 +3057,6 @@ function getData() {
 //render the top 5 movie list on the page
 function render() {
     finalDataArray = finalDataArray.slice(0, 5);
-    console.log(finalDataArray);
 
     const html = finalDataArray.map(function (movie) {
         return `
@@ -3078,13 +3077,10 @@ function removeOverlay() {
     })
 }
 
-
 //function to render all movie specific contents
 function renderOverlay(e) {
     $overlay.empty();
-    let $elementClicked = $(e.target);
-    let $closest = $elementClicked.next();
-    let movieName = $closest.text();
+    let movieName = $(e.target).next().text();
     let movieClicked = {};
 
     finalDataArray.forEach(movie => {
@@ -3113,18 +3109,13 @@ function renderOverlay(e) {
     $($overlay).append(movieCardHtml);
     $('.movieDisplay').css('box-shadow', `0 0 30px ${movieDisplaRGBA}`);
     $('#title').css('color', movieDisplaRGBA);
-    // $('#plot').css('color', movieDisplaRGBA);
     $('#runtime').css('color', movieDisplaRGBA);
 }
 
 function randomRGBAGenerator() {
-    console.log("test");
     let red = Math.floor(Math.random() * 255);
     let green = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
-
-    let test = `rgba(${red}, ${green}, ${blue} , 1)`;
-    console.log(test);
     return `rgba(${red}, ${green}, ${blue} , 1)`;
 }
 
