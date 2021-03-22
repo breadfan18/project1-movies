@@ -3108,11 +3108,24 @@ function renderOverlay(e) {
     `
     $overlay.fadeIn(1000, function () {
         $overlay.css('display', 'flex');
-    }
-        )
+    })
+    let movieDisplaRGBA = randomRGBAGenerator();
     $($overlay).append(movieCardHtml);
-    // $('.movieDisplay').addClass('movieDisplaySwipeIn');
+    $('.movieDisplay').css('box-shadow', `0 0 30px ${movieDisplaRGBA}`);
+    $('#title').css('color', movieDisplaRGBA);
+    // $('#plot').css('color', movieDisplaRGBA);
+    $('#runtime').css('color', movieDisplaRGBA);
+}
 
+function randomRGBAGenerator() {
+    console.log("test");
+    let red = Math.floor(Math.random() * 255);
+    let green = Math.floor(Math.random() * 255);
+    let blue = Math.floor(Math.random() * 255);
+
+    let test = `rgba(${red}, ${green}, ${blue} , 1)`;
+    console.log(test);
+    return `rgba(${red}, ${green}, ${blue} , 1)`;
 }
 
 
