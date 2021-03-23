@@ -2977,7 +2977,7 @@ movies.forEach(movie => {
 const $movieSection = $('#movies');
 const $actionButton = $('.action');
 const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padding-bottom:calc(57.50% +  44px)'>
-                    <iframe src='https://gfycat.com/ifr/CalmGiftedErmine' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
+                    <iframe src='imgs/countdown.gif' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
                     </iframe>
                 </div>`;
 const $overlay = $('.overlay');
