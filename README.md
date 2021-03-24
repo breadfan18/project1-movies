@@ -1,7 +1,7 @@
 # GA Project 1 - Top 5 Movies
 I am a big movie buff. So when we were asked to pick an API for Project 1, I naturally gravitated towards the movies API. I built a very simple application that generates a list of 5 random movies from the [OMDB API]('http://omdbapi.com/). The movies are displayed as tiles/cards on the main screen. The user can then click the movie card to bring up an overlay with additional details about the movie. 
 
-## Live Website Link
+## Live Links
 Github: 
 - https://breadfan18.github.io/project1-movies/
 
