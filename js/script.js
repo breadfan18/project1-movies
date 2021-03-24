@@ -2987,16 +2987,12 @@ const $overlay = $('.overlay');
 
 /* FUNCTIONS */
 //function that returns an array of 5 random movies. 
-
-init();
-
 function createShortMovieArr() {
     let shortMovieArr = [];
     for (let i = 0; i < 20; i++) {
         let randomNum = Math.floor(Math.random() * (mainMoviesArray.length - 1) + 1);
         shortMovieArr.push(mainMoviesArray[randomNum]);
     }
-
     return shortMovieArr;
 }
 
@@ -3126,6 +3122,16 @@ function randomRGBAGenerator() {
     return `rgba(${red}, ${green}, ${blue} , 1)`;
 }
 
+function resizeOverlayDisplay() {
+    if (window.visualViewport.width < 700) {
+        $('#mainImg').hide();
+        $('.movieDisplay').css('backgroundImage', `url(${currentMoviePoster})`);
+        $('.movieDisplay').css('background-size', `cover`);
+    } else {
+        $('.movieDisplay').css('backgroundImage', `none`);
+        $('#mainImg').show()
+    }
+}
 
 // Event Listeners 
 $actionButton.on('click', init);
@@ -3133,20 +3139,7 @@ $overlay.on('click', removeOverlay);
 $movieSection.on('click', '.card', renderOverlay);
 
 
-window.addEventListener('resize', function () {
-    if (window.visualViewport.width < 700) {
-        $('#mainImg').hide();
-
-        $('.movieDisplay').css('backgroundImage', `url(${currentMoviePoster})`);
-        $('.movieDisplay').css('background-size', `cover`);
-    } else {
-        $('.movieDisplay').css('backgroundImage', `none`);
-        $('#mainImg').show()
-
-    }
-
-
-})
+window.addEventListener('resize', resizeOverlayDisplay)
 
 /* 
 Considerations:
