@@ -32,7 +32,7 @@ These were the wireframes I created before starting to write any code for this p
 ## Screenshots
 
 ### Landing Page
-![landingPageLayout](https://i.imgur.com/62lpZaL.png)
+![landingPageLayout](https://i.imgur.com/xGuMYIs.png)
 
 ### Main Movie Screen
 ![movieListLayout](https://i.imgur.com/BOWb46K.jpg)
