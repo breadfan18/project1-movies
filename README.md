@@ -108,5 +108,6 @@ function getData() {
 - The final array that was a size of 5 always had 5 movies without any errors. 
 
 ## Future Enhancements
+- Add placeholder cards on the landing page so it doesn't look so empty.
 - Give the user the option to select a Genre, and only return results for that Genre from the API
 - Embed movie trailers to the Movie Details overlay. May have to hit another API to return trailers for a given movie, since OMDB API doesn't return trailers. 
