@@ -3081,6 +3081,7 @@ function removeOverlay() {
 
 //function to render all movie specific contents
 function renderOverlay(e) {
+    if (e.target.getAttribute('src') === 'imgs/startingImg.jpg') return;
     currentMoviePoster = e.target.getAttribute('src');
     $overlay.empty();
     let movieName = $(e.target).next().text();
