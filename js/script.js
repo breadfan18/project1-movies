@@ -2987,6 +2987,9 @@ const $overlay = $('.overlay');
 
 /* FUNCTIONS */
 //function that returns an array of 5 random movies. 
+
+init();
+
 function createShortMovieArr() {
     let shortMovieArr = [];
     for (let i = 0; i < 20; i++) {

@@ -267,11 +267,20 @@ footer {
         padding: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.75);
+        height: 100%;
+        border-radius: 30px;
+
     }
 
     .movieText > * {
         padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    #title {
+        text-shadow: none;
     }
 
 }
