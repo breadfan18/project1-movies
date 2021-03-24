@@ -3053,7 +3053,6 @@ function getData() {
     setTimeout(() => {
         render();
     }, 1000);
-
 }
 
 //render the top 5 movie list on the page
