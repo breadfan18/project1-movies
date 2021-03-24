@@ -102,7 +102,7 @@ function getData() {
 - So i needed a way to filter out the ones returning Error before rendering movies on the DOM
 
 #### Solution
-- Increaased the total array size of movies to 20 instead of 5
+- Increased the total array size of movies to 20 instead of 5
 - Then inside the `getData()` function, added a condition to `return` if the movie data being returned has a `key` of "Error". 
 - Then i took the final array size, and sliced it to 5. 
 - The final array that was a size of 5 always had 5 movies without any errors. 
