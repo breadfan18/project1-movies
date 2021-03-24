@@ -40,6 +40,10 @@ These were the wireframes I created before starting to write any code for this p
 ### Movie Details Overlay
 ![movieDetailsOverlay](https://i.imgur.com/Go4GPlG.png)
 
+### Movie Details Overlay - RESPONSIVE
+![movieDetailsOverlay Responsive](https://i.imgur.com/abz1J4D.png)
+
+
 ## Challenges
 ### The need to work with multiple URLs
 
