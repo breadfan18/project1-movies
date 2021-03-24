@@ -2976,11 +2976,13 @@ movies.forEach(movie => {
 });
 let currentMoviePoster;
 
+// https://gfycat.com/ifr/CalmGiftedErmine
+
 // ELEMENTS
 const $movieSection = $('#movies');
 const $actionButton = $('.action');
 const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padding-bottom:calc(57.50% +  44px)'>
-                    <iframe src='https://gfycat.com/ifr/CalmGiftedErmine' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
+                    <iframe src='imgs/countdown_small.gif' width='100%' height='100%' style='position:absolute;top:0;left:0;'>
                     </iframe>
                 </div>`;
 const $overlay = $('.overlay');
@@ -3138,8 +3140,6 @@ function resizeOverlayDisplay() {
 $actionButton.on('click', init);
 $overlay.on('click', removeOverlay);
 $movieSection.on('click', '.card', renderOverlay);
-
-
 window.addEventListener('resize', resizeOverlayDisplay)
 
 /* 
@@ -3150,7 +3150,7 @@ Considerations:
 
 /* 
 TO FIX
-- Clicking Year of Movie Name in card will result in error, because i don't have any conditional logic to map those to the movie object
+- Clicking Movie Name OR in card will result in error, because i don't have any conditional logic to map those to the movie object
 - one IFRAME element still exists for some reason and is taking up space, pushing the footer down.
 - Disabled action button, during countdown.
 */
