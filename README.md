@@ -108,7 +108,7 @@ function getData() {
 - The final array that was a size of 5 always had 5 movies without any errors. 
 
 ## Future Enhancements
-- Utilize `locaslStorage` to store the last loaded set of movies and use those to render the movies when the page is opened. 
+- Utilize `localStorage` to store the last loaded set of movies and use those to render the movies when the page is opened. 
 - Give the user the option to select a Genre, and only return results for that Genre from the API
 - Embed movie trailers to the Movie Details overlay. May have to hit another API to return trailers for a given movie, since OMDB API doesn't return trailers. 
 
@@ -116,3 +116,4 @@ function getData() {
 - Clicking Movie Name OR in card will result in error, because i don't have any conditional logic to map those to the movie object
 - One IFRAME element still exists for some reason and is taking up space, pushing the footer down.
 - If you click Action button during countdown, it will show 10 movie results. Need to disabled the Action button during countdown. 
+- The overlay doesn't take up the entirety of the vertical height. If user scrolls down while overlay is shows, there's no overlay in scrolled down part. 
