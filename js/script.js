@@ -1,4 +1,4 @@
-// VARIABLES
+//DATA
 const movies = [{
         "title": "The Shawshank Redemption",
         "year": 1994,
@@ -2967,13 +2967,14 @@ const movies = [{
         "rate": 8
     }
 ]
+
+// VARIABLES
 let mainMoviesArray = [];
 let finalDataArray = [];
 movies.forEach(movie => {
     mainMoviesArray.push(movie.title);
 });
-
-// iframe gfy link -> https://gfycat.com/ifr/CalmGiftedErmine
+let currentMoviePoster;
 
 // ELEMENTS
 const $movieSection = $('#movies');
@@ -2985,7 +2986,6 @@ const IFRAME = `<div class="iframe" style='position:relative; margin-top:0; padd
 const $overlay = $('.overlay');
 
 /* FUNCTIONS */
-
 //function that returns an array of 5 random movies. 
 function createShortMovieArr() {
     let shortMovieArr = [];
@@ -3079,8 +3079,10 @@ function removeOverlay() {
     })
 }
 
+
 //function to render all movie specific contents
 function renderOverlay(e) {
+    currentMoviePoster = e.target.getAttribute('src');
     $overlay.empty();
     let movieName = $(e.target).next().text();
     let movieClicked = {};
@@ -3126,6 +3128,22 @@ function randomRGBAGenerator() {
 $actionButton.on('click', init);
 $overlay.on('click', removeOverlay);
 $movieSection.on('click', '.card', renderOverlay);
+
+
+window.addEventListener('resize', function () {
+    if (window.visualViewport.width < 700) {
+        $('#mainImg').hide();
+
+        $('.movieDisplay').css('backgroundImage', `url(${currentMoviePoster})`);
+        $('.movieDisplay').css('background-size', `cover`);
+    } else {
+        $('.movieDisplay').css('backgroundImage', `none`);
+        $('#mainImg').show()
+
+    }
+
+
+})
 
 /* 
 Considerations:
