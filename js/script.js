@@ -3015,7 +3015,7 @@ function init() {
     //clear all children from the movieSection
     $movieSection.empty();
 
-    //Empty the final movier array
+    //Empty the final movie array
     finalDataArray = [];
 
     //getting rid of previously generated iframes
