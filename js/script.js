@@ -3052,7 +3052,7 @@ function getData() {
 //render the top 5 movie list on the page
 function render() {
     $('.iframe').remove();
-    
+
     finalDataArray = finalDataArray.slice(0, 5);
 
     const html = finalDataArray.map(function (movie) {
@@ -3079,6 +3079,13 @@ function removeOverlay() {
 //function to render all movie specific contents
 function renderOverlay(e) {
     if (e.target.getAttribute('src') === 'imgs/startingImg.jpg') return;
+    if (e.target.textContent === 'Click Action') return;
+    if (e.target.textContent === 'Top Right') return;
+
+    console.log(e.target);
+
+    console.log(e.target.textContent);
+
     currentMoviePoster = e.target.getAttribute('src');
     $overlay.empty();
     let movieName = $(e.target).next().text();
