@@ -114,6 +114,6 @@ function getData() {
 
 ## Bugs:
 - Clicking Movie Name OR in card will result in error, because i don't have any conditional logic to map those to the movie object
-- One IFRAME element still exists for some reason and is taking up space, pushing the footer down.
+- ~~One IFRAME element still exists for some reason and is taking up space, pushing the footer down.~~ FIXED
 - If you click Action button during countdown, it will show 10 movie results. Need to disabled the Action button during countdown. 
 - The overlay doesn't take up the entirety of the vertical height. If user scrolls down while overlay is shows, there's no overlay in scrolled down part. 
