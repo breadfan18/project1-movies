@@ -191,7 +191,7 @@ footer {
 }
 
 #title {
-    /* this way the font won't go below 35px */
+    /* this way the font won't go below 20px */
     font-size:calc(20px + 3vw);
     text-shadow:  0 0 5px white, 0 0 5px white;
 }

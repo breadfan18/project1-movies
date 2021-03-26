@@ -3018,12 +3018,6 @@ function init() {
     //Empty the final movie array
     finalDataArray = [];
 
-    //getting rid of previously generated iframes
-    let $allIframes = $('.iframe');
-    for (const iframe of $allIframes) {
-        iframe.remove();
-    }
-
     //Add new iframe for the countdown
     $('main').append(IFRAME);
 
@@ -3057,6 +3051,8 @@ function getData() {
 
 //render the top 5 movie list on the page
 function render() {
+    $('.iframe').remove();
+    
     finalDataArray = finalDataArray.slice(0, 5);
 
     const html = finalDataArray.map(function (movie) {
@@ -3069,6 +3065,7 @@ function render() {
         `;
     });
     $movieSection.append(html);
+ 
 }
 
 //function called by click action on the overlay, so set display of overlay to none, and go back to the main page.
