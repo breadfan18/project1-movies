@@ -3082,10 +3082,6 @@ function renderOverlay(e) {
     if (e.target.textContent === 'Click Action') return;
     if (e.target.textContent === 'Top Right') return;
 
-    console.log(e.target);
-
-    console.log(e.target.textContent);
-
     currentMoviePoster = e.target.getAttribute('src');
     $overlay.empty();
     let movieName = $(e.target).next().text();
