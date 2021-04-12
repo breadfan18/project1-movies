@@ -2997,6 +2997,7 @@ function createShortMovieArr() {
     return shortMovieArr;
 }
 
+
 //function to create a base URL for a given movie
 function createBaseUrls(movieName) {
     return `https://www.omdbapi.com/?apikey=53aa2cd6&t=${movieName}`;
